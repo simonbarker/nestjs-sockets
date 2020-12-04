@@ -1,6 +1,6 @@
 var app = require('express')();
 var server = require('http').createServer(app);
-options={
+var options={
   cors:true,
   origins:["http://127.0.0.1:3000"],
 }
