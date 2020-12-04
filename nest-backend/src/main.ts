@@ -1,14 +1,13 @@
 import { NestFactory } from '@nestjs/core';
+import { IoAdapter } from '@nestjs/platform-socket.io';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'x-client-id'],
-    exposedHeaders: ['Set-Cookie'],
-    credentials: true,
-    origin: true,
+    origin: 'http://locahost:3005',
   });
+
   await app.listen(7000);
 }
 bootstrap();
